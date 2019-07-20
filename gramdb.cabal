@@ -1,0 +1,88 @@
+name:                gramdb
+version:             0.1.0.0
+synopsis:            A small graph database.
+-- description:
+homepage:            github.com/Camsbury/gramdb
+license:             MIT
+license-file:        LICENSE
+author:              Cameron Kingsbury
+maintainer:          camsbury7@gmail.com
+-- copyright:
+category:            Database
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+cabal-version:       >=1.10
+
+library
+  -- other-extensions:
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  exposed-modules:
+                  Prelude
+                  GramDB
+                  GramDB.Orphans
+                  GramDB.Type
+                  GramDB.Util
+  -- other-modules:
+  default-extensions:
+                     DerivingStrategies
+                     FlexibleContexts
+                     FlexibleInstances
+                     FunctionalDependencies
+                     GeneralizedNewtypeDeriving
+                     LambdaCase
+                     NoImplicitPrelude
+                     OverloadedLists
+                     OverloadedStrings
+                     RecordWildCards
+                     ScopedTypeVariables
+                     StandaloneDeriving
+                     TupleSections
+                     TypeApplications
+  build-depends:       base-noprelude >=4.11
+                     , classy-prelude
+                     , directory
+                     , hedgehog
+                     , lens
+                     , mtl
+                     , store
+                     , uuid
+                     , uuid-types
+                     , vector
+
+test-suite gramdb-tests
+  main-is:             Main.hs
+  other-modules:
+                       Test.Prelude
+                       Test.Support
+                       GramDBTest
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  default-language:    Haskell2010
+  default-extensions:
+                     DerivingStrategies
+                     FlexibleContexts
+                     FlexibleInstances
+                     FunctionalDependencies
+                     GeneralizedNewtypeDeriving
+                     NoImplicitPrelude
+                     OverloadedStrings
+                     OverloadedLists
+                     RecordWildCards
+                     ScopedTypeVariables
+                     StandaloneDeriving
+                     TypeApplications
+                     TupleSections
+  build-depends:       base-noprelude >=4.11
+                     , classy-prelude
+                     , gramdb
+                     , directory
+                     , hedgehog
+                     , lens
+                     , mtl
+                     , store
+                     , tasty
+                     , tasty-discover
+                     , tasty-hedgehog
+                     , uuid
+                     , uuid-types
