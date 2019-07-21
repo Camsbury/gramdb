@@ -1,0 +1,10 @@
+* GramDB
+This library is my first crack at a simple graph database.
+
+Query syntax similar to Datalog, but implemented first as a Haskell ADT.
+
+Upcoming tasks:
+- round trip tests to disk & passing
+- simple match-based queries & tested
+- rule-based queries & tested
+- mutations & tested
